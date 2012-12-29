@@ -1,11 +1,10 @@
 " LilyPond indent file
 " Language:     LilyPond
-" Maintainer:   Heikki Junes <hjunes@cc.hut.fi>
-" Last Change:  2004 Mar 01
+" Maintainer:   Heikki Junes <hjunes@cc.hut.fi>, Chris Wong <lambda.fairy@gmail.com>
+" Last Change:  2012 Dec 29
 "
 " Installed As:	vim/indent/lilypond.vim
-"
-" Only load this indent file when no other was loaded.
+
 if exists("b:did_indent")
   finish
 endif
@@ -25,21 +24,13 @@ function GetLilyPondIndent()
   endif
 
   "Find a non-blank line above the current line.
-  let lnum = prevnonblank(v:lnum - 1)
+  let prev = getline(prevnonblank(v:lnum - 1))
   "Check if a block was started: '{' or '<<' is the last non-blank character of the previous line.
-  if getline(lnum) =~ '^.*\({\|<<\)\s*$'
-    let ind = indent(lnum) + &sw
+  if prev =~ '^.*\({\|<<\)\s*$'
+    return indent(lnum) + &sw
+  elseif prev =~ '^.*\(}\|>>\)\s*$'
+    return indent(lnum) - &sw
   else
-    let ind = indent(lnum)
+    return indent(lnum)
   endif
-
-  "Check if a block was ended: '}' or '>>' is the first non-blank character of the current line.
-  if getline(v:lnum) =~ '^\s*\(}\|>>\)'
-    let ind = ind - &sw
-  endif
-
-  return ind
 endfunction
-"
-"
-"
