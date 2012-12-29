@@ -1,7 +1,7 @@
 " LilyPond filetype plugin
 " Language:     LilyPond (ft=ly)
-" Maintainer:   Heikki Junes <hjunes@cc.hut.fi>
-" Last Change:  2004 March 1
+" Maintainer:   Heikki Junes <hjunes@cc.hut.fi>, Chris Wong <lambda.fairy@gmail.com>
+" Last Change:  2012 Dec 29
 "
 " Installed As:	vim/ftplugin/lilypond.vim
 " Uses Generated File:	vim/syntax/lilypond-words.el
@@ -20,16 +20,16 @@ setlocal shiftwidth=4
 " some handy key mappings
 "
 " <F4>  save & make and play midi
-map <buffer> <F4> :w<Return>:se makeprg=lilypond\ -m\ %<<Return>:make<Return>:!timidity %<.midi<Return>
+map <buffer> <F4> :w<Return>:se makeprg=lilypond\ -m\ %<<Return>:make<Return>:!xdg-open %<.midi<Return>
 "
-" <F5>  save & make dvi, midi, ps
+" <F5>  save & make everything
 map <buffer> <F5> :w<Return>:se makeprg=lilypond\ %<<Return>:make<Return>
 "
-" <F6>  view ps
-map <buffer> <F6> :!gv --watch %<.ps &<Return>
+" <F6>  view pdf
+map <buffer> <F6> :!xdg-open %<.pdf<Return>
 "
-" <S-F6>  view dvi
-map <buffer> <S-F6> :!xdvi %<.dvi &<Return>
+" <S-F6>  view ps
+map <buffer> <S-F6> :!xdg-open %<.ps<Return>
 "
 " <F7>  prev error
 map <buffer> <F7> :cp<Return>
