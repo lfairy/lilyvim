@@ -24,13 +24,14 @@ function GetLilyPondIndent()
   endif
 
   "Find a non-blank line above the current line.
-  let prev = getline(prevnonblank(v:lnum - 1))
+  let prev = prevnonblank(v:lnum - 1)
+  let prevline = getline(prev)
   "Check if a block was started: '{' or '<<' is the last non-blank character of the previous line.
-  if prev =~ '^.*\({\|<<\)\s*$'
-    return indent(lnum) + &sw
-  elseif prev =~ '^.*\(}\|>>\)\s*$'
-    return indent(lnum) - &sw
+  if prevline =~ '^.*\({\|<<\)\s*$'
+    return indent(prev) + &sw
+  elseif prevline =~ '^.*\(}\|>>\)\s*$'
+    return indent(prev) - &sw
   else
-    return indent(lnum)
+    return indent(prev)
   endif
 endfunction
