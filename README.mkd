@@ -1,7 +1,8 @@
 LilyPond for Vim
 ================
 
-This is a collection of scripts for working with LilyPond using Vim.
+This is a collection of scripts for working with [LilyPond][] using
+[Vim][].
 
 It's mostly copied from the LilyPond source code, except:
 
@@ -15,5 +16,7 @@ It's mostly copied from the LilyPond source code, except:
 * The custom keybindings have been tweaked slightly: they use `xdg-open`
   instead of hard-coding the application name.
 
+[LilyPond]: http://lilypond.org/
+[Vim]: http://www.vim.org/
 [Pathogen]: https://github.com/tpope/vim-pathogen
 [banner indentation]: https://en.wikipedia.org/wiki/Indent_style#Banner_style
