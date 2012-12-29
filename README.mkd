@@ -9,7 +9,11 @@ It's mostly copied from the LilyPond source code, except:
   [Pathogen][];
 
 * The indent script uses [banner indentation][], which I prefer to the
-  ugly K&R style used in the original.
+  ugly K&R style used in the original. It also handles braces opening
+  and closing on the same line (e.g. `\layout {}`).
+
+* The custom keybindings have been tweaked slightly: they use `xdg-open`
+  instead of hard-coding the application name.
 
 [Pathogen]: https://github.com/tpope/vim-pathogen
 [banner indentation]: https://en.wikipedia.org/wiki/Indent_style#Banner_style
