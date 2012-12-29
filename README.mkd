@@ -10,7 +10,7 @@ It's mostly copied from the LilyPond source code, except:
 
 * The indent script uses [banner indentation][], which I prefer to the
   ugly K&R style used in the original. It also handles braces opening
-  and closing on the same line (e.g. `\layout {}`).
+  and closing on the same line (e.g. `\layout {}`);
 
 * The custom keybindings have been tweaked slightly: they use `xdg-open`
   instead of hard-coding the application name.
