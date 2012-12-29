@@ -1,0 +1,15 @@
+LilyPond for Vim
+================
+
+This is a collection of scripts for working with LilyPond using Vim.
+
+It's mostly copied from the LilyPond source code, except:
+
+* Because it's in a separate repository, you can use it with
+  [Pathogen][];
+
+* The indent script uses [banner indentation][], which I prefer to the
+  ugly K&R style used in the original.
+
+[Pathogen]: https://github.com/tpope/vim-pathogen
+[banner indentation]: https://en.wikipedia.org/wiki/Indent_style#Banner_style
