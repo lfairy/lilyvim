@@ -19,17 +19,20 @@ setlocal shiftwidth=4
 "
 " some handy key mappings
 "
-" <F4>  save & make and play midi
-map <buffer> <F4> :w<Return>:se makeprg=lilypond\ -m\ %<<Return>:make<Return>:!xdg-open %<.midi<Return>
+" <F4>  play midi
+map <buffer> <F4> :w<Return>:!xdg-open %<.midi &<Return>
 "
 " <F5>  save & make everything
 map <buffer> <F5> :w<Return>:se makeprg=lilypond\ %<<Return>:make<Return>
 "
+" <S-F5>  save & make and play midi
+map <buffer> <S-F5> :w<Return>:se makeprg=lilypond\ %<<Return>:make<Return>:!xdg-open %<.midi &<Return>
+"
 " <F6>  view pdf
-map <buffer> <F6> :!xdg-open %<.pdf<Return>
+map <buffer> <F6> :!xdg-open %<.pdf &<Return>
 "
 " <S-F6>  view ps
-map <buffer> <S-F6> :!xdg-open %<.ps<Return>
+map <buffer> <S-F6> :!xdg-open %<.ps &<Return>
 "
 " <F7>  prev error
 map <buffer> <F7> :cp<Return>
