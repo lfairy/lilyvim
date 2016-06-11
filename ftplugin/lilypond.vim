@@ -4,7 +4,7 @@
 " Last Change:  2012 Dec 29
 "
 " Installed As:	vim/ftplugin/lilypond.vim
-" Uses Generated File:	vim/syntax/lilypond-words.el
+" Uses Generated File:	vim/syntax/lilypond-words.vim
 "
 " Only do this when not done yet for this buffer
 if exists("b:did_ftplugin")
